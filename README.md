@@ -10,3 +10,5 @@ Ajout de la page contact
 Création du fichier monApp.db
 installation de flasj alchemy pip install flask-sqlalchemy
 pip freeze pour mettre à jour
+Ajout du fichier models.py
+Code de la classe Livre
