@@ -12,3 +12,4 @@ installation de flasj alchemy pip install flask-sqlalchemy
 pip freeze pour mettre à jour
 Ajout du fichier models.py
 Code de la classe Livre
+Ajout de la relation Many to one
