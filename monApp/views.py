@@ -1,5 +1,4 @@
-from monApp import app
-
+from .app import app
 @app.route("/")
 def index():
     return "Hello world !"
@@ -11,3 +10,7 @@ def about():
 @app.route("/contact")
 def contact():
     return app.config["CONTACT"]
+
+if __name__ == "__main__":
+    app.run()
+    

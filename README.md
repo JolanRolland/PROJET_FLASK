@@ -13,3 +13,9 @@ pip freeze pour mettre à jour
 Ajout du fichier models.py
 Code de la classe Livre
 Ajout de la relation Many to one
+
+Ajout du fichier commands.py
+Ajout du fichier data.yml, installation pyyaml + update requirements.txt
+Fin du tp 2 avec test des commandes dans flask Shell
+
+Début du tp3
