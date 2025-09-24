@@ -19,3 +19,6 @@ Ajout du fichier data.yml, installation pyyaml + update requirements.txt
 Fin du tp 2 avec test des commandes dans flask Shell
 
 Début du tp3
+ajout du template index.html
+Création des 2 autres templates about et contact + liaisons dans views.py
+Fin du TP3
