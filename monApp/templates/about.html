@@ -5,8 +5,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>À propos</h1>
-    <p>Ce site web a été réalisée pour apprendre flask</p>
+    <h1>{{ title }}</h1>
+    <p>{{ message }}</p>
     <nav>
         <a href="{{ url_for('index') }}">Accueil</a> |
         <a href="{{ url_for('about') }}">À propos</a> |

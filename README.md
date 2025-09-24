@@ -1,24 +1,39 @@
-# PROJET_FLASK
-Rolland
-Jolan
+# PROJET FLASK
 
-Création de l'environnement 
-pip freeze > requirements.txt
-Ajout de la page About
-Ajout de la page contact
+**Rolland Jolan**
 
-Création du fichier monApp.db
-installation de flasj alchemy pip install flask-sqlalchemy
-pip freeze pour mettre à jour
-Ajout du fichier models.py
-Code de la classe Livre
-Ajout de la relation Many to one
+---
 
-Ajout du fichier commands.py
-Ajout du fichier data.yml, installation pyyaml + update requirements.txt
-Fin du tp 2 avec test des commandes dans flask Shell
+## TP 1 
 
-Début du tp3
-ajout du template index.html
-Création des 2 autres templates about et contact + liaisons dans views.py
-Fin du TP3
+* Création de l'environnement virtuel.
+* `pip freeze > requirements.txt`
+* Ajout de la page About.
+* Ajout de la page Contact.
+
+---
+
+## TP 2 
+
+* Création du fichier `monApp.db`.
+* Installation de `flask-sqlalchemy` et mise à jour de `requirements.txt`.
+* Ajout du fichier `models.py`.
+* Code de la classe `Livre`.
+* Ajout de la relation **Many-to-One**.
+* Ajout du fichier `commands.py`.
+* Ajout du fichier `data.yml` et installation de `pyyaml`.
+* Tests des commandes dans le shell Flask.
+
+---
+
+## TP 3 
+
+* Ajout du template `index.html`.
+* Création des templates `about.html` et `contact.html`.
+* Liaison des templates dans `views.py`.
+
+---
+
+## TP 4
+
+* Création du template `base.html`
