@@ -1,7 +1,18 @@
+<!doctype html>
 <html>
-    <head>
-        <title>{{title}}</title>
-        <link rel="stylesheet" href="{{ url_for ('static', filename ='style.css') }}">
-    </head>
-    {% block main %} {% endblock %}
-</html >
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Accueil</a> |
+        <a href="{{ url_for('getAuteurs') }}">Auteurs</a> |
+        <a href="{{ url_for('getLivres') }}">Livres</a> |
+        <a href="{{ url_for('about') }}">À propos</a> |
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+
+    {% block main %}{% endblock %}
+</body>
+</html>

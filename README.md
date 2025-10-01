@@ -37,3 +37,8 @@
 ## TP 4
 
 * Création du template `base.html`
+* Modification du template `base.html` pour y ajouter une navbar que j'ai créé
+* Utilisation du template `base.html` pour les fichiers `about.html` `contact.html` `index.html`
+* Ajouts de paramètres pour la vue Index `base.html` 
+* Création de la page `livres_list.html`
+

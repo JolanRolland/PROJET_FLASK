@@ -1,18 +1,5 @@
-<!doctype html>
-<html>
-<head>
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
+{% block main %}
     <h1>{{ title }}</h1>
-
     <p>{{ message }}</p>
-
-    <nav>
-        <a href="{{ url_for('index') }}">Accueil</a> |
-        <a href="{{ url_for('about') }}">À propos</a> |
-        <a href="{{ url_for('contact') }}">Contact</a>
-    </nav>
-</body>
-</html>
+{% endblock %}
