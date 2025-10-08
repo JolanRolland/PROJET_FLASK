@@ -4,6 +4,13 @@
 
 ---
 
+## Lancer l'application
+* Lancer l'environnement virtuel venv source venv/bin/activate
+* Installer les dépendances : `pip install -r requirements.txt`
+* Lancer application : `flask run`
+
+---
+
 ## TP 1 
 
 * Création de l'environnement virtuel.
@@ -41,4 +48,10 @@
 * Utilisation du template `base.html` pour les fichiers `about.html` `contact.html` `index.html`
 * Ajouts de paramètres pour la vue Index `base.html` 
 * Création de la page `livres_list.html`
+* Utilisation de bootstrap dans le template `base.html`
 
+---
+
+## TP 5
+
+* Génération d'une nouvelle clé secrète avec la commande uuidgen `base.html`
