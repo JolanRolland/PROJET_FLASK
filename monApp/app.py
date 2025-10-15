@@ -6,9 +6,13 @@ from flask_bootstrap5 import Bootstrap
 app = Flask(__name__)
 app.config.from_object("config")
 
+from flask_login import LoginManager
+login_manager = LoginManager(app)
+
 # Initialisation des extensions
 db = SQLAlchemy(app)
 bootstrap = Bootstrap(app)
+
 
 # Import des vues à la fin
 from monApp import views

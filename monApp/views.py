@@ -1,10 +1,11 @@
 from .app import app
 from flask import render_template, request
-from monApp.models import Auteur
+from monApp.models import Auteur, load_user
 from monApp.models import Livre
-from monApp.forms import FormAuteur, FormLivre
+from monApp.forms import FormAuteur, FormLivre, LoginForm
 from .app import db
 from flask import url_for , redirect
+from flask_login import logout_user
 
 @app.route('/')
 @app.route('/index/')
@@ -41,6 +42,7 @@ def getAuteurById(idA):
     pass
 
 @app.route('/auteurs/<idA>/update/')
+@login_required
 def updateAuteur(idA):
     unAuteur = Auteur.query.get(idA)
     unForm = FormAuteur(idA=unAuteur.idA , Nom=unAuteur.Nom)
@@ -145,3 +147,19 @@ def saveLivre():
     idL = request.form.get("idL")
     selectedLivre = Livre.query.get(idL)
     return render_template("livre_update.html", selectedLivre=selectedLivre, updateForm=unForm)
+
+@app.route ("/login/", methods =("GET","POST" ,))
+def login():
+    unForm = LoginForm()
+    unUser=None
+    if unForm.validate_on_submit():
+        unUser = unForm.get_authenticated_user()
+        if unUser:
+            load_user(unUser)
+            return redirect (url_for("index",name=unUser.Login))
+    return render_template ("login.html",form=unForm)
+
+@app.route ("/logout/")
+def logout():
+    logout_user()
+    return redirect ( url_for ('index'))

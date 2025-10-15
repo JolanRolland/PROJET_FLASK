@@ -57,3 +57,6 @@
 * Génération d'une nouvelle clé secrète avec la commande uuidgen `base.html`
 Création des vues getAuteurById et updateAuteur
 Création du template auteur_update.html
+
+TP6
+Création de User dans la bd models.py
