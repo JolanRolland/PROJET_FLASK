@@ -5,12 +5,27 @@
 ---
 
 ## Lancer l'application
+
 * Lancer l'environnement virtuel venv `source venv/bin/activate`
 * Installer les dépendances : `pip install -r requirements.txt`
 * Lancer application : `flask run`
 
 ---
 
+## Relancer la BD
+
+* `flask loaddb monApp/data/data.yml`
+* `flask syncdb`
+* `flask newuser jolan rolland`
+
+---
+
+## Lancer les tests
+
+* `coverage run -m pytest`
+* `coverage report -m`
+
+---
 ## TP 1 
 
 * Création de l'environnement virtuel.
@@ -89,6 +104,12 @@ passe est correct et renvoie l’instance de User représentant cet utilisateur
 * Ajout de la redirection automatique avec le login_manager
 * Ajout des redirections vers la page qu'il consultait après un login
 
+
+---
+
+## TP 7
+
+* Création du fichier `conftest.py`
 ---
 
 ## BONUS
