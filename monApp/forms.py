@@ -27,6 +27,8 @@ class FormLivre(FlaskForm):
 class LoginForm(FlaskForm):
     Login = StringField('Identifiant')
     Password = PasswordField('Mot de passe')
+    next = HiddenField()
+    
     def get_authenticated_user (self):
         unUser = User.query.get(self.Login.data)
         if unUser is None:

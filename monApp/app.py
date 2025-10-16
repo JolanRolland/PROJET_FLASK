@@ -13,6 +13,7 @@ login_manager = LoginManager(app)
 db = SQLAlchemy(app)
 bootstrap = Bootstrap(app)
 
+login_manager.login_view = "login"
 
 # Import des vues à la fin
 from monApp import views

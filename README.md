@@ -55,8 +55,19 @@
 ## TP 5
 
 * Génération d'une nouvelle clé secrète avec la commande uuidgen `base.html`
-Création des vues getAuteurById et updateAuteur
-Création du template auteur_update.html
+* Création des vues getAuteurById et updateAuteur
+* Création du template `auteur_update.html`
+* Ajout de la vue saveAuteur + viewAuteur
+* Modification du template `auteur_update.html` pour utiliser la méthode saveAuteur
+* Création du template `auteur_view.html`
+* Modification de `auteurs_list.html` pour y ajouter les liens vers les pages de modification et de consultation
+* Ajout de l'affichage des erreurs de validation dans `auteur_update.html`
+* Ajout de la possibilité de créer un auteur dans le menu de navigation `base.html`
+* Création d'une vue createAuteur() + création du template `auteur_create.html`
+* Ajout d'une vue insertAuteur() pour valider l’action de création
+* Ajout du lien de suppression d'un auteur dans `auteurs_list.html`
+* Création de la vue deleteAuteur(idA) pour afficher le formulaire de suppression + template `auteur_delete.html` et vue eraseAuteur() pour valider l’action de suppression
+* Fait de même pour consulter et modifier les livres (+ vue viewLivre, updateLivre, saveLivre), (Créatiion des templates `livre_view`, `livre_update`)
 
 TP6
 Création de User dans la bd models.py
