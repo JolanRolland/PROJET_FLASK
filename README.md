@@ -70,4 +70,18 @@
 * Fait de même pour consulter et modifier les livres (+ vue viewLivre, updateLivre, saveLivre), (Créatiion des templates `livre_view`, `livre_update`)
 
 TP6
-Création de User dans la bd models.py
+* Création de User dans la bd `models.py`
+* Ajout de la commande syncdb pour ajouter les tables manquantes
+* Ajout de la commande newuser (login, pwd) pour ajouter un nouvel utilisateur
+* Ajout de la commande newpasswrd(login, newpwd) pour modifier le mot de passe d'un utilisateur
+* Ajout du login manager dans `app.py` pour activer le plugin
+* Création du formulaire LoginForm + méthode get_authenticated_user(self) qui vérifie que l’utilisateur existe, et que son mot de
+passe est correct et renvoie l’instance de User représentant cet utilisateur
+* Ajout de la vue login dans `views.py`
+* Création du template `login.html`
+* Ajout du nom de l'utilisateur en haut a droite de la navbar `base.html`
+* Création de la vue logout dans `views.py`
+* Ajout de la vérification de l'authentification pour éditer et supprimer dans les templates `auteurs_list.html`, `livres_list.html`
+* Ajout du @login_required pour protéger les vues d'éditions d'insertions et de suppressions des auteurs / livres
+* Ajout de la redirection automatique avec le login_manager
+* Ajout des redirections vers la page qu'il consultait après un login
