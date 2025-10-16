@@ -8,15 +8,10 @@
 
 * Lancer l'environnement virtuel venv `source venv/bin/activate`
 * Installer les dépendances : `pip install -r requirements.txt`
-* Lancer application : `flask run`
-
----
-
-## Relancer la BD
-
-* `flask loaddb monApp/data/data.yml`
+* Charger la BD avec ces commandes : `flask loaddb monApp/data/data.yml`
 * `flask syncdb`
 * `flask newuser jolan rolland`
+* Lancer application : `flask run`
 
 ---
 
