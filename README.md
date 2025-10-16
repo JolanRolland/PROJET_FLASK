@@ -5,7 +5,7 @@
 ---
 
 ## Lancer l'application
-* Lancer l'environnement virtuel venv source venv/bin/activate
+* Lancer l'environnement virtuel venv `source venv/bin/activate`
 * Installer les dépendances : `pip install -r requirements.txt`
 * Lancer application : `flask run`
 
@@ -69,7 +69,10 @@
 * Création de la vue deleteAuteur(idA) pour afficher le formulaire de suppression + template `auteur_delete.html` et vue eraseAuteur() pour valider l’action de suppression
 * Fait de même pour consulter et modifier les livres (+ vue viewLivre, updateLivre, saveLivre), (Créatiion des templates `livre_view`, `livre_update`)
 
-TP6
+---
+
+## TP 6
+
 * Création de User dans la bd `models.py`
 * Ajout de la commande syncdb pour ajouter les tables manquantes
 * Ajout de la commande newuser (login, pwd) pour ajouter un nouvel utilisateur
@@ -85,3 +88,8 @@ passe est correct et renvoie l’instance de User représentant cet utilisateur
 * Ajout du @login_required pour protéger les vues d'éditions d'insertions et de suppressions des auteurs / livres
 * Ajout de la redirection automatique avec le login_manager
 * Ajout des redirections vers la page qu'il consultait après un login
+
+---
+
+## BONUS
+* Ajout de la liste des livres d'un auteur lors de la consultation d'un auteur

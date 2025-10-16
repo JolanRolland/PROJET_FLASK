@@ -1,19 +1,53 @@
 {% extends "base.html" %}
 {% block main %}
-<h1 >Consultation du livre : {{ selectedLivre.Titre }}</h1>
+<h1>Consultation du livre : {{ selectedLivre.Titre }}</h1>
+
 <form role="form" method="POST" action="">
-    {{ viewForm.hidden_tag () }}
+    {{ viewForm.hidden_tag() }}
     
+    <!-- Titre -->
     <div class="form-group mb-3">
         {{ viewForm.Titre.label }}
         {{ viewForm.Titre(size=50, disabled=True, class_="form-control") }}
     </div>
 
+    <!-- Prix -->
     <div class="form-group mb-3">
         {{ viewForm.Prix.label }}
         {{ viewForm.Prix(size=50, disabled=True, class_="form-control") }}
     </div>
-    
+
+    <!-- Auteur -->
+    <div class="form-group mb-3">
+        <label>Auteur :</label>
+        <input type="text" class="form-control" value="{{ selectedLivre.auteur.Nom }}" disabled>
+    </div>
+
+    <!-- URL -->
+    <div class="form-group mb-3">
+        <label>URL du livre :</label>
+        {% if selectedLivre.Url %}
+            <a href="{{ selectedLivre.Url }}" target="_blank" class="form-control text-primary" style="text-decoration:none;">
+                {{ selectedLivre.Url }}
+            </a>
+        {% else %}
+            <input type="text" class="form-control" value="Aucune URL disponible" disabled>
+        {% endif %}
+    </div>
+
+    <!-- Image -->
+    {% if selectedLivre.Img %}
+    <div class="form-group mb-3">
+        <label>Première de couverture :</label><br>
+        <img src="{{ url_for('static', filename='images/' + selectedLivre.Img) }}" 
+             alt="Couverture de {{ selectedLivre.Titre }}" 
+             class="img-fluid rounded shadow" 
+             style="max-width: 250px;">
+    </div>
+    {% else %}
+    <p><em>Aucune image disponible pour ce livre.</em></p>
+    {% endif %}
+
     <a href="{{ url_for('getLivres') }}" class="btn btn-secondary">Retour à la liste</a>
-</form >
+</form>
 {% endblock %}
