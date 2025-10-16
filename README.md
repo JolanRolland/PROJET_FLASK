@@ -110,6 +110,15 @@ passe est correct et renvoie l’instance de User représentant cet utilisateur
 ## TP 7
 
 * Création du fichier `conftest.py`
+* Création des tests unitaires dans tests/unit/ : test_models_auteur.py, test_models_livre.py et test_models_user.py pour tester les méthodes __init__, __repr__, les relations et la fonction load_user().
+* Création des tests fonctionnels dans tests/functional/.
+* Ajout de test_routes_auteur.py pour tester les routes /auteurs/, /auteurs/1/view/, /auteurs/1/update/, /auteurs/1/delete/ et /auteur/ avec et sans connexion.
+* Ajout de test_forms_auteur.py pour tester les routes POST /auteur/save/, /auteur/insert/ et /auteur/erase/.
+* Ajout de test_routes_livre.py et test_forms_livre.py pour tester les routes et formulaires des livres : /livres/, /livres/1/view/, /livres/1/update/, /livre/save/ (succès et erreur).
+* Ajout de tests pour les vues simples index, about, contact et logout.
+* Lancement des tests avec coverage run -m pytest puis coverage report -m.
+* La couverture finale dépasse les 90 % (91%)
+
 ---
 
 ## BONUS
