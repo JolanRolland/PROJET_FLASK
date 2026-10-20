@@ -1,120 +1,88 @@
-# PROJET FLASK
+# 📚 Catalogue de livres — Flask
 
-**Rolland Jolan**
+> Une application web pédagogique pour parcourir des livres et leurs auteurs, et gérer le catalogue après connexion.
 
----
+<p>
+  <img src="https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white" alt="Python 3">
+  <img src="https://img.shields.io/badge/Flask-3.1-111827?logo=flask&logoColor=white" alt="Flask 3.1">
+  <img src="https://img.shields.io/badge/SQLite-base%20de%20donn%C3%A9es-3E82A0?logo=sqlite&logoColor=white" alt="SQLite">
+  <img src="https://img.shields.io/badge/Pytest-tests-0A9EDC?logo=pytest&logoColor=white" alt="Pytest">
+</p>
 
-## Lancer l'application
+## Le projet en bref
 
-* Lancer l'environnement virtuel venv `source venv/bin/activate`
-* Installer les dépendances : `pip install -r requirements.txt`
-* Charger la BD avec ces commandes : `flask loaddb monApp/data/data.yml`
-* `flask syncdb`
-* `flask newuser jolan rolland`
-* Lancer application : `flask run`
+Ce projet, réalisé dans le cadre de mon BUT Informatique, m'a permis de construire une application Flask de bout en bout : modèles de données, vues, formulaires, authentification, templates et tests.
 
----
+| Côté visiteur | Après connexion |
+| --- | --- |
+| Consulter les listes et fiches des livres et auteurs | Créer, modifier et supprimer des auteurs |
+| Accéder aux pages d'information | Modifier les fiches des livres |
 
-## Lancer les tests
+Les données sont stockées dans **SQLite** avec **SQLAlchemy**. Chaque livre est lié à un auteur. Les formulaires utilisent **Flask-WTF**, et les opérations d'édition sont protégées par **Flask-Login**.
 
-* `coverage run -m pytest`
-* `coverage report -m`
+## Ce que j'ai travaillé
 
----
-## TP 1 
+- Modélisation des entités `Livre`, `Auteur` et `User`, avec une relation entre livres et auteurs.
+- Mise en place des routes Flask, des vues et des templates Jinja.
+- Création des formulaires de consultation et d'édition, avec validation.
+- Gestion des connexions et protection des pages d'édition.
+- Tests unitaires et fonctionnels avec Pytest et mesure de couverture avec Coverage.
 
-* Création de l'environnement virtuel.
-* `pip freeze > requirements.txt`
-* Ajout de la page About.
-* Ajout de la page Contact.
+## Stack et structure
 
----
+```text
+monApp/
+├── app.py          # Application Flask et extensions
+├── models.py       # Modèles SQLAlchemy
+├── views.py        # Routes et vues
+├── forms.py        # Formulaires
+├── commands.py     # Commandes de préparation de la base
+├── templates/      # Pages Jinja
+├── static/         # Ressources statiques
+├── data/           # Données d'exemple
+└── tests/          # Tests unitaires et fonctionnels
+```
 
-## TP 2 
+**Technologies :** Python · Flask · SQLAlchemy · SQLite · Flask-Login · Flask-WTF · Jinja · Bootstrap · Pytest.
 
-* Création du fichier `monApp.db`.
-* Installation de `flask-sqlalchemy` et mise à jour de `requirements.txt`.
-* Ajout du fichier `models.py`.
-* Code de la classe `Livre`.
-* Ajout de la relation **Many-to-One**.
-* Ajout du fichier `commands.py`.
-* Ajout du fichier `data.yml` et installation de `pyyaml`.
-* Tests des commandes dans le shell Flask.
+## Lancer le projet
 
----
+Prérequis : Python 3 et Git.
 
-## TP 3 
+```bash
+git clone https://github.com/JolanRolland/PROJET_FLASK.git
+cd PROJET_FLASK
+python -m venv .venv
+```
 
-* Ajout du template `index.html`.
-* Création des templates `about.html` et `contact.html`.
-* Liaison des templates dans `views.py`.
+Activez l'environnement virtuel :
 
----
+- **Windows PowerShell :** `.venv\Scripts\Activate.ps1`
+- **macOS / Linux :** `source .venv/bin/activate`
 
-## TP 4
+Installez les dépendances et préparez la base :
 
-* Création du template `base.html`
-* Modification du template `base.html` pour y ajouter une navbar que j'ai créé
-* Utilisation du template `base.html` pour les fichiers `about.html` `contact.html` `index.html`
-* Ajouts de paramètres pour la vue Index `base.html` 
-* Création de la page `livres_list.html`
-* Utilisation de bootstrap dans le template `base.html`
+```bash
+pip install -r requirements.txt
+flask loaddb monApp/data/data.yml
+flask syncdb
+flask newuser demo mot-de-passe-local
+flask run
+```
 
----
+Ouvrez ensuite l'adresse indiquée par Flask dans le terminal, généralement `http://127.0.0.1:5000`.
 
-## TP 5
+> **Attention :** `flask loaddb` supprime et recrée les tables avant d'importer les données d'exemple. Utilisez cette commande uniquement sur une base locale de démonstration.
 
-* Génération d'une nouvelle clé secrète avec la commande uuidgen `base.html`
-* Création des vues getAuteurById et updateAuteur
-* Création du template `auteur_update.html`
-* Ajout de la vue saveAuteur + viewAuteur
-* Modification du template `auteur_update.html` pour utiliser la méthode saveAuteur
-* Création du template `auteur_view.html`
-* Modification de `auteurs_list.html` pour y ajouter les liens vers les pages de modification et de consultation
-* Ajout de l'affichage des erreurs de validation dans `auteur_update.html`
-* Ajout de la possibilité de créer un auteur dans le menu de navigation `base.html`
-* Création d'une vue createAuteur() + création du template `auteur_create.html`
-* Ajout d'une vue insertAuteur() pour valider l’action de création
-* Ajout du lien de suppression d'un auteur dans `auteurs_list.html`
-* Création de la vue deleteAuteur(idA) pour afficher le formulaire de suppression + template `auteur_delete.html` et vue eraseAuteur() pour valider l’action de suppression
-* Fait de même pour consulter et modifier les livres (+ vue viewLivre, updateLivre, saveLivre), (Créatiion des templates `livre_view`, `livre_update`)
+## Tests
 
----
+```bash
+coverage run -m pytest
+coverage report -m
+```
 
-## TP 6
-
-* Création de User dans la bd `models.py`
-* Ajout de la commande syncdb pour ajouter les tables manquantes
-* Ajout de la commande newuser (login, pwd) pour ajouter un nouvel utilisateur
-* Ajout de la commande newpasswrd(login, newpwd) pour modifier le mot de passe d'un utilisateur
-* Ajout du login manager dans `app.py` pour activer le plugin
-* Création du formulaire LoginForm + méthode get_authenticated_user(self) qui vérifie que l’utilisateur existe, et que son mot de
-passe est correct et renvoie l’instance de User représentant cet utilisateur
-* Ajout de la vue login dans `views.py`
-* Création du template `login.html`
-* Ajout du nom de l'utilisateur en haut a droite de la navbar `base.html`
-* Création de la vue logout dans `views.py`
-* Ajout de la vérification de l'authentification pour éditer et supprimer dans les templates `auteurs_list.html`, `livres_list.html`
-* Ajout du @login_required pour protéger les vues d'éditions d'insertions et de suppressions des auteurs / livres
-* Ajout de la redirection automatique avec le login_manager
-* Ajout des redirections vers la page qu'il consultait après un login
-
+Les tests couvrent les modèles, les formulaires et plusieurs parcours des livres et des auteurs. Le compte rendu du projet indique une couverture de **91 %** lors de la dernière mesure documentée.
 
 ---
 
-## TP 7
-
-* Création du fichier `conftest.py`
-* Création des tests unitaires dans tests/unit/ : test_models_auteur.py, test_models_livre.py et test_models_user.py pour tester les méthodes __init__, __repr__, les relations et la fonction load_user().
-* Création des tests fonctionnels dans tests/functional/.
-* Ajout de test_routes_auteur.py pour tester les routes /auteurs/, /auteurs/1/view/, /auteurs/1/update/, /auteurs/1/delete/ et /auteur/ avec et sans connexion.
-* Ajout de test_forms_auteur.py pour tester les routes POST /auteur/save/, /auteur/insert/ et /auteur/erase/.
-* Ajout de test_routes_livre.py et test_forms_livre.py pour tester les routes et formulaires des livres : /livres/, /livres/1/view/, /livres/1/update/, /livre/save/ (succès et erreur).
-* Ajout de tests pour les vues simples index, about, contact et logout.
-* Lancement des tests avec coverage run -m pytest puis coverage report -m.
-* La couverture finale dépasse les 90 % (91%)
-
----
-
-## BONUS
-* Ajout de la liste des livres d'un auteur lors de la consultation d'un auteur
+Réalisé par [Jolan Rolland](https://github.com/JolanRolland) · [Me retrouver sur LinkedIn](https://www.linkedin.com/in/jolan-rolland-14982a389/)
