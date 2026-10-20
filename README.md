@@ -1,4 +1,4 @@
-# 📚 Catalogue de livres — Flask
+# 📚 Catalogue de livres - Flask
 
 > Une application web pédagogique pour parcourir des livres et leurs auteurs, et gérer le catalogue après connexion.
 
